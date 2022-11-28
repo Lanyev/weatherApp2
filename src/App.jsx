@@ -9,6 +9,15 @@ function App() {
   const [temperature, setTemperature] = useState();
   const [isCelsius, setIsCelsius] = useState(true);
 
+  const newCallAPISearch = (cityName) => {
+    const API_KEY = "6babd9f397072cd3e87b5238726de264";
+    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`;
+    axios
+      .get(URL)
+      .then((res) => setWeather(res.data))
+      .catch((error) => console.log(error));
+  };
+
   const changeUnitTemperature = () => setIsCelsius(!isCelsius);
 
   const success = ({ coords: { latitude, longitude } }) => {
@@ -84,6 +93,7 @@ function App() {
           isCelsius={isCelsius}
           setIsCelsius={setIsCelsius}
           changeUnitTemperature={changeUnitTemperature}
+          newCallAPISearch={newCallAPISearch}
         />
       ) : (
         <img src="src/assets/752.svg" alt="" />

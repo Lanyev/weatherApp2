@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
 const WeatherCard = ({
   weather,
   temperature,
   isCelsius,
   changeUnitTemperature,
+  newCallAPISearch,
 }) => {
   console.log(weather);
+  const [place, setPlace] = useState("");
+
+  const handleChangePlace = (e) => {
+    setPlace(e.target.value);
+    console.log(e.target.value);
+  };
+
   return (
     <article className="weatherCard">
       <div className="search-box">
-        <input type="text" className="search-bar" placeholder="Search..." />
+        <input
+          type="text"
+          value={place}
+          onChange={handleChangePlace}
+          className="search-bar"
+          placeholder="Search..."
+        />
+        <button
+          onClick={() => newCallAPISearch(place)}
+          className="search-button"
+        >
+          Search
+        </button>
       </div>
       <header>
         <h1>{`${weather.name}, ${weather.sys.country}`}</h1>
