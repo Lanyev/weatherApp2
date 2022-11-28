@@ -253,3 +253,17 @@ article ul {
     transform: translateY(-10px);
   }
 }
+
+@media (min-width: 800px) {
+  .weatherCard {
+    width: 700px;
+    margin: 0 auto;
+  }
+  .temp {
+    width: 500px;
+  }
+  .date {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
