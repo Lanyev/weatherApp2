@@ -47,14 +47,14 @@ header h1 {
   font-size: var(--fs-large);
   color: #fff;
   font-weight: 500;
-  font-size: 70px;
+  font-size: 2.2rem;
   text-align: center;
   text-shadow: 3px 3px rgba(50, 50, 50, 0.5);
 }
 
 header h2 {
   grid-area: location;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #fff;
   font-weight: 500;
   text-align: center;
@@ -64,10 +64,11 @@ header h2 {
 .imgWeather img {
   display: flex;
   justify-content: center;
-  width: 300px;
+  width: 350px;
   height: auto;
   margin: 0 auto;
-  animation: gradient ease-in-out 1s;
+  -webkit-animation: action 1s infinite alternate;
+  animation: action 1s infinite alternate;
 }
 
 .date {
@@ -89,8 +90,9 @@ article ul {
   place-content: stretch;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing);
-  padding: var(--spacing);
-  text-shadow: #111111;
+  /* padding: var(--spacing); */
+  color: #fff;
+  text-shadow: 3px 3px rgba(50, 50, 50, 0.5);
 }
 
 .temp {
@@ -151,7 +153,7 @@ article ul {
   display: inline-block;
   font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
     sans-serif;
-  font-size: 12px;
+  /* font-size: 10px; */
   font-weight: 400;
   line-height: 1.15385;
   margin: 0;
@@ -165,9 +167,10 @@ article ul {
   touch-action: manipulation;
   vertical-align: baseline;
   white-space: nowrap;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 300;
   margin-top: 0.5rem;
+  padding: 0.2rem 0.6rem;
 }
 
 /*Card Buttons*/
@@ -230,5 +233,23 @@ article ul {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@-webkit-keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
   }
 }
