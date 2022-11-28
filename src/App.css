@@ -70,6 +70,13 @@ header h2 {
   -webkit-animation: action 1s infinite alternate;
   animation: action 1s infinite alternate;
 }
+.imgWeather {
+  transition: all 1s ease-in-out;
+}
+
+.imgWeather:hover {
+  transform: scale(1.4);
+}
 
 .date {
   position: relative;
@@ -171,6 +178,10 @@ article ul {
   font-weight: 300;
   margin-top: 0.5rem;
   padding: 0.2rem 0.6rem;
+}
+.search-button:hover,
+.search-button:focus {
+  background-color: #07c;
 }
 
 /*Card Buttons*/
