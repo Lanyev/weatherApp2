@@ -164,15 +164,15 @@ article ul {
   /* margin-top: 0.5rem; */
 }
 
-.cardButton:hover,
+/* .cardButton:hover,
 .cardButton:focus {
   background-color: #07c;
-}
+} */
 
-.cardButton:active {
+/* .cardButton:active {
   background-color: #0064bd;
   box-shadow: none;
-}
+} */
 
 /* ANIMATIONS */
 
