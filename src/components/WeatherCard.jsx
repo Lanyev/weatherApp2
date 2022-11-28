@@ -37,7 +37,7 @@ const WeatherCard = ({
         <h2>Location</h2>
       </header>
       <section>
-        <div>
+        <div className="imgWeather">
           <img
             src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`}
             alt="Clima"
