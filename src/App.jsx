@@ -8,6 +8,7 @@ function App() {
   const [weather, setWeather] = useState();
   const [temperature, setTemperature] = useState();
   const [isCelsius, setIsCelsius] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const newCallAPISearch = (cityName) => {
     const API_KEY = "6babd9f397072cd3e87b5238726de264";
@@ -27,7 +28,13 @@ function App() {
       longitude,
     });
   };
-
+  /*Loader */
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  }, []);
   /*Fecha */
   const dateBuilder = (d) => {
     let months = [
@@ -60,7 +67,7 @@ function App() {
 
     return `${day} ${date} ${month} ${year}`;
   };
-
+  /*CurrentPosition */
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success);
   }, []);

@@ -6,6 +6,8 @@ const WeatherCard = ({
   isCelsius,
   changeUnitTemperature,
   newCallAPISearch,
+  loading,
+  setLoading,
 }) => {
   console.log(weather);
   const [place, setPlace] = useState("");
